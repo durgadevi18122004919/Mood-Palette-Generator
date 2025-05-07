@@ -1,0 +1,57 @@
+    const moodPalettes = {
+      happy: [
+        { color: '#f9d423', quote: "Sunshine is the best medicine." },
+        { color: '#ff4e50', quote: "Let your joy burst forth like flowers in the spring." },
+        { color: '#ff6f61', quote: "Happiness looks good on you." },
+        { color: '#f8b500', quote: "Smile big. Laugh often. Shine bright." }
+      ],
+      calm: [
+        { color: '#a8edea', quote: "Peace is the result of training your mind to process life as it is." },
+        { color: '#fed6e3', quote: "Serenity is not freedom from the storm, but peace amid the storm." },
+        { color: '#c3cfe2', quote: "Breathe in calm, breathe out stress." },
+        { color: '#b9fbc0', quote: "Still waters run deep." }
+      ],
+      sad: [
+        { color: '#4a5568', quote: "Tears are words the heart can't express." },
+        { color: '#2d3748', quote: "Sometimes, it's okay to not be okay." },
+        { color: '#718096', quote: "Sadness flies away on the wings of time." },
+        { color: '#a0aec0', quote: "Even the darkest night will end and the sun will rise." }
+      ],
+      energetic: [
+        { color: '#ff6b6b', quote: "Energy is contagious. Share it." },
+        { color: '#f06595', quote: "Fuel your fire and run with passion." },
+        { color: '#ff922b', quote: "Start strong. Stay strong. Finish stronger." },
+        { color: '#ffd43b', quote: "Wake up. Kick ass. Repeat." }
+      ],
+      romantic: [
+        { color: '#ffb6b9', quote: "Love is the flower you’ve got to let grow." },
+        { color: '#fcd5ce', quote: "You are my today and all of my tomorrows." },
+        { color: '#f8c8dc', quote: "Every love story is beautiful, but ours is my favorite." },
+        { color: '#ffc8dd', quote: "In your smile, I see something more beautiful than the stars." }
+      ]
+    };
+
+    function generatePalette() {
+      const mood = document.getElementById('moodSelect').value;
+      const paletteDiv = document.getElementById('palette');
+      paletteDiv.innerHTML = '';
+
+      if (moodPalettes[mood]) {
+        moodPalettes[mood].forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'color-card';
+
+          const colorBox = document.createElement('div');
+          colorBox.className = 'color-box';
+          colorBox.style.backgroundColor = item.color;
+
+          const quote = document.createElement('div');
+          quote.className = 'quote';
+          quote.textContent = `"${item.quote}"`;
+
+          card.appendChild(colorBox);
+          card.appendChild(quote);
+          paletteDiv.appendChild(card);
+        });
+      }
+    }

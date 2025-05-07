@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Palette Generator with Quotes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="demo.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Mood Palette Generator 🎨</h2>
+    <select id="moodSelect">
+      <option value="">Select a Mood</option>
+      <option value="happy">Happy 😊</option>
+      <option value="calm">Calm 🧘‍♀️</option>
+      <option value="sad">Sad 😢</option>
+      <option value="energetic">Energetic ⚡</option>
+      <option value="romantic">Romantic 💖</option>
+    </select>
+    <button onclick="generatePalette()">Generate Palette</button>
+    <div class="palette" id="palette"></div>
+  </div>
+</body>
+</html>
